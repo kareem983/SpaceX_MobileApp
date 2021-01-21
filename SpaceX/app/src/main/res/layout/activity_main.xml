@@ -7,13 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/tx"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="#000"
-        android:textSize="25dp"/>
+
 
 </RelativeLayout>

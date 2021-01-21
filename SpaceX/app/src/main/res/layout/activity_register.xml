@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="#151219">
+
+    <TextView
+        android:id="@+id/RegisterTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:textColor="#fff"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/RContextTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RegisterTxt"
+        android:text="Please fill the input below here"
+        android:textColor="#B0FFFFFF"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="20dp" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/RNameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/REmailContainer"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/nameIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_person_24"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="33dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RNameEditLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:textColorHint="#B7FFFFFF"
+            android:background="@drawable/contaoner">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/RNameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="FULL NAME"
+                android:textSize="15dp"
+                android:textColor="#fff"
+                android:inputType="text"
+                android:paddingBottom="5dp"
+                android:paddingLeft="38dp"
+                android:paddingRight="15dp"
+                android:background="@android:color/transparent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/REmailContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/RPasswordContainer"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/REmailIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_email_24"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="33dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/REmailEditLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:textColorHint="#B7FFFFFF"
+            android:background="@drawable/contaoner">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/REmailEdit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="EMAIL"
+                android:textSize="15dp"
+                android:textColor="#fff"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="5dp"
+                android:paddingLeft="38dp"
+                android:paddingRight="15dp"
+                android:background="@android:color/transparent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/RPasswordContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/RPasswordIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_lock_24"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="33dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RPasswordEditLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:textColorHint="#B7FFFFFF"
+            android:background="@drawable/contaoner">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/RPasswordEdit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="PASSWORD"
+                android:textSize="15dp"
+                android:textColor="#fff"
+                android:inputType="textPassword"
+                android:paddingBottom="5dp"
+                android:paddingLeft="38dp"
+                android:paddingRight="15dp"
+                android:background="@android:color/transparent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/RCPasswordContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RPasswordContainer">
+
+        <ImageView
+            android:id="@+id/RCPasswordIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_lock_24"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="33dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RCPasswordEditLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:textColorHint="#B7FFFFFF"
+            android:background="@drawable/contaoner">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/RCPasswordEdit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="CONFIRM PASSWORD"
+                android:textSize="15dp"
+                android:textColor="#fff"
+                android:inputType="textPassword"
+                android:paddingBottom="5dp"
+                android:paddingLeft="38dp"
+                android:paddingRight="15dp"
+                android:background="@android:color/transparent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/RegisterBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/RCPasswordContainer"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:background="@drawable/button1"
+        android:text="sign up"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <RelativeLayout
+        android:id="@+id/RcheckContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/Rtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account?"
+            android:textColor="#B7FFFFFF"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/goToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/Rtxt"
+            android:text="Sign in"
+            android:textColor="#00FFE6"
+            android:textSize="18dp"
+            android:layout_marginLeft="3dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
