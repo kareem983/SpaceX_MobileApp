@@ -11,13 +11,13 @@
         android:roundIcon="@mipmap/space_x_white_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity" android:screenOrientation="portrait"
-            android:parentActivityName=".LoginActivity"/>
+        <activity android:name=".ui.RegisterActivity" android:screenOrientation="portrait"
+            android:parentActivityName=".ui.LoginActivity"/>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Fullscreen">
             <intent-filter>
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait" />
     </application>
 

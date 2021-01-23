@@ -1,15 +1,20 @@
-package com.example.spacex;
+package com.example.spacex.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.widget.ImageView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.spacex.R;
 
 public class SplashActivity extends AppCompatActivity {
     private ImageView RocketImg,NameImg;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +36,12 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                String email = preferences.getString("Email","Failed");
+                if(email.equals("Failed"))
+                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                else
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 finish();
             }
         }, 3500);
