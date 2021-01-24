@@ -107,7 +107,9 @@
                     android:layout_marginRight="35dp"
                     android:hint="PASSWORD"
                     android:textColorHint="#B7FFFFFF"
-                    android:background="@drawable/contaoner">
+                    android:background="@drawable/contaoner"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#B7FFFFFF">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/PasswordEdit"

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <item
+       android:id="@+id/HomeId"
+       android:title="Home"
+       android:icon="@drawable/ic_baseline_home_24"/>
+    <item
+        android:id="@+id/CompanyId"
+        android:title="Company"
+        android:icon="@drawable/ic_baseline_airplanemode_active_24"/>
+
+    <item android:title="SpaceX Categories">
+        <menu>
+            <item android:id="@+id/RocketsID"
+                android:title="Rockets"/>
+            <item android:id="@+id/LaunchesID"
+                android:title="Launches"/>
+            <item android:id="@+id/DragonsID"
+                android:title="Dragons"/>
+            <item android:id="@+id/ShipsID"
+                android:title="Ships"/>
+        </menu>
+    </item>
+
+
+    <item android:title="Logout">
+        <menu>
+            <item android:id="@+id/LogoutID"
+                android:title="Logout"
+                android:icon="@drawable/ic_baseline_exit_to_app_24"/>
+            </menu>
+    </item>
+
+</menu>

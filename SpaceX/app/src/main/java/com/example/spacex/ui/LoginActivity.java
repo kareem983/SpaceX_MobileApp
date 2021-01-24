@@ -3,7 +3,9 @@ package com.example.spacex.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView GoToRegister;
     private AppDataBase db;
     public static Activity fa;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +60,19 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void CheckExistence(){
-        String EmailValue = EmailEdit.getText().toString(), PasswordValue = PasswordEdit.getText().toString();
+        String EmailValue = EmailEdit.getText().toString().trim(), PasswordValue = PasswordEdit.getText().toString();
 
         if(EmailValue.isEmpty() ||PasswordValue.isEmpty())
             Toast.makeText(LoginActivity.this,"Empty cell", Toast.LENGTH_SHORT).show();
 
         else {
-            String IsExist = db.getOnePerson(EmailValue, PasswordValue);
-            if (IsExist != null) {
+            String EmailIsExist = db.getPersonEmail(EmailValue, PasswordValue);
+            if (EmailIsExist != null) {
+                preferences = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("Email", EmailValue);
+                editor.apply();
+
                 Toast.makeText(LoginActivity.this, "welcome back", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);

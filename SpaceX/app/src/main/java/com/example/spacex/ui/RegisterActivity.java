@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -60,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     private void InsertPersonInDataBase(){
-        String NameValue = NameEdit.getText().toString(), EmailValue = EmailEdit.getText().toString(),
+        String NameValue = NameEdit.getText().toString().trim(), EmailValue = EmailEdit.getText().toString().trim(),
                 PasswordValue = PasswordEdit.getText().toString(), CPasswordValue = CPasswordEdit.getText().toString();
 
         if(AllCheck(NameValue, EmailValue, PasswordValue, CPasswordValue)){
@@ -71,10 +70,11 @@ public class RegisterActivity extends AppCompatActivity {
 
             else{
              //shared pre ************
-                preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+                preferences = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("Email",EmailValue);
-                editor.commit();
+                editor.putString("Email", EmailValue);
+                editor.apply();
 
                 Toast.makeText(RegisterActivity.this,"You registered successfully!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(RegisterActivity.this,MainActivity.class);

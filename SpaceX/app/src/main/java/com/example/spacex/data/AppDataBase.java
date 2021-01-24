@@ -12,8 +12,12 @@ public abstract class AppDataBase extends RoomDatabase {
         return userDao().InsertPerson(person);
     }
 
-    public String getOnePerson(String email, String password){
-        return userDao().GetOneUser(email, password);
+    public String getPersonEmail(String email, String password){
+        return userDao().GetUserEmail(email, password);
+    }
+
+    public String getPersonName(String email){
+        return userDao().GetUserName(email);
     }
 
 }

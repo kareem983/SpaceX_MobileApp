@@ -70,6 +70,9 @@ interface UserDao{
     public long InsertPerson(UserEntityDatabase userDatabase);
 
     @Query("SELECT Email FROM UserEntityDatabase WHERE Email =:email AND Password=:password")
-    public String GetOneUser(String email, String password);
+    public String GetUserEmail(String email, String password);
+
+    @Query("SELECT Name FROM UserEntityDatabase WHERE Email =:email")
+    public String GetUserName(String email);
 
 }
