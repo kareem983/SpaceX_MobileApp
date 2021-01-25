@@ -16,7 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import com.example.spacex.R;
-import com.example.spacex.data.AppDataBase;
+import com.example.spacex.database.AppDataBase;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -65,7 +65,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id= item.getItemId();
-        if(id == R.id.LogoutID){
+        if(id == R.id.CompanyId){
+           Intent intent = new Intent(MainActivity.this,CompanyActivity.class);
+           startActivity(intent);
+        }
+        else if(id == R.id.RocketsID){
+            Intent intent = new Intent(MainActivity.this,RocketsActivity.class);
+            startActivity(intent);
+        }
+        else if(id == R.id.LogoutID){
             CheckLogout();
         }
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -84,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void CheckLogout(){
         AlertDialog.Builder checkAlert = new AlertDialog.Builder(MainActivity.this);
-        checkAlert.setMessage("Do you want to Log out?")
+        checkAlert.setMessage("Do you want to Logout?")
                 .setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -105,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
         AlertDialog alert = checkAlert.create();
-        alert.setTitle("Log Out");
+        alert.setTitle("Logout");
         alert.show();
     }
 }

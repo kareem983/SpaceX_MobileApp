@@ -1,4 +1,4 @@
-package com.example.spacex.data;
+package com.example.spacex.database;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;

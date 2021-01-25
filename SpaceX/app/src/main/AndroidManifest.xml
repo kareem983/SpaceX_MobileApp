@@ -11,8 +11,20 @@
         android:roundIcon="@mipmap/space_x_white_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.RegisterActivity" android:screenOrientation="portrait"
-            android:parentActivityName=".ui.LoginActivity"/>
+        <activity android:name=".ui.RocketsActivity"
+            android:screenOrientation="portrait" android:label="Rockets" android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.Dark" />
+
+        <activity
+            android:name=".ui.CompanyActivity"
+            android:label="Company Info"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:parentActivityName=".ui.LoginActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.LoginActivity"
             android:screenOrientation="portrait" />
@@ -28,7 +40,8 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
     </application>
 
 </manifest>

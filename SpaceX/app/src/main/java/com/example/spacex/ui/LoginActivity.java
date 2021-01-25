@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.spacex.R;
-import com.example.spacex.data.AppDataBase;
+import com.example.spacex.database.AppDataBase;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {

@@ -42,8 +42,13 @@ dependencies {
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:2.6.2"
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //view model
+    def lifecycle_version = "2.1.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     //picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+    //Circle image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //Room database
     implementation 'androidx.room:room-runtime:2.2.2'
