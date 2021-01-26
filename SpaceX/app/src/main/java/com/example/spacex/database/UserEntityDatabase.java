@@ -1,6 +1,5 @@
 package com.example.spacex.database;
 
-
 import androidx.room.ColumnInfo;
 import androidx.room.Dao;
 import androidx.room.Entity;

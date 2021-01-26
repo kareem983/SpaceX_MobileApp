@@ -19,6 +19,8 @@ public class LaunchesActivity extends AppCompatActivity {
     private ProgressBar launchesProgress;
     private LaunchesAdapter adapter;
     private LaunchesViewModel launchesViewModel;
+    private LaunchesAdapter.RecyclerViewClickListener listener;
+    private List<LaunchesModel> listOfLaunches;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,8 @@ public class LaunchesActivity extends AppCompatActivity {
         launchesViewModel.LaunchesMutableLiveData.observe(this, new Observer<List<LaunchesModel>>() {
             @Override
             public void onChanged(List<LaunchesModel> launchesModels) {
-                adapter = new LaunchesAdapter(LaunchesActivity.this, launchesModels);
+                listOfLaunches = launchesModels;
+                adapter = new LaunchesAdapter(LaunchesActivity.this, launchesModels, listener);
                 launchesRecycler.setAdapter(adapter);
 
                 launchesProgress.setVisibility(View.GONE);
@@ -42,5 +45,13 @@ public class LaunchesActivity extends AppCompatActivity {
             }
         });
 
+
+        listener = new LaunchesAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                LaunchesModel launchesModel = listOfLaunches.get(position);
+                //go to LaunchInfo Activity
+            }
+        };
     }
 }

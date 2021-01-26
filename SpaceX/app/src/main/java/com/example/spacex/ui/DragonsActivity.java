@@ -19,6 +19,8 @@ public class DragonsActivity extends AppCompatActivity {
     private ProgressBar dragonsProgress;
     private DragonsAdapter adapter;
     private DragonsViewModel dragonsViewModel;
+    private DragonsAdapter.RecyclerViewClickListener listener;
+    private List<DragonsModel> listOfDragons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +37,21 @@ public class DragonsActivity extends AppCompatActivity {
         dragonsViewModel.DragonsMutableLiveData.observe(this, new Observer<List<DragonsModel>>() {
             @Override
             public void onChanged(List<DragonsModel> dragonsModels) {
-                adapter = new DragonsAdapter(DragonsActivity.this, dragonsModels);
+                listOfDragons = dragonsModels;
+                adapter = new DragonsAdapter(DragonsActivity.this, dragonsModels, listener);
                 dragonsRecycler.setAdapter(adapter);
 
                 dragonsProgress.setVisibility(View.GONE);
                 dragonsRecycler.setVisibility(View.VISIBLE);
             }
         });
+
+        listener = new DragonsAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                DragonsModel dragonsModel = listOfDragons.get(position);
+                //go to DragonInfo Activity
+            }
+        };
     }
 }

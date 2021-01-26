@@ -19,6 +19,8 @@ public class ShipsActivity extends AppCompatActivity {
     private ProgressBar ShipsProgress;
     private ShipsAdapter adapter;
     private ShipsViewModel shipsViewModel;
+    private ShipsAdapter.RecyclerViewClickListener listener;
+    private List<ShipsModel> listOfShips;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,8 @@ public class ShipsActivity extends AppCompatActivity {
         shipsViewModel.ShipsMutableLiveData.observe(this, new Observer<List<ShipsModel>>() {
             @Override
             public void onChanged(List<ShipsModel> shipsModels) {
-                adapter = new ShipsAdapter(ShipsActivity.this,shipsModels);
+                listOfShips = shipsModels;
+                adapter = new ShipsAdapter(ShipsActivity.this,shipsModels, listener);
                 ShipsRecyclerView.setAdapter(adapter);
 
                 ShipsRecyclerView.setVisibility(View.VISIBLE);
@@ -42,5 +45,12 @@ public class ShipsActivity extends AppCompatActivity {
             }
         });
 
+        listener = new ShipsAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                ShipsModel shipsModel = listOfShips.get(position);
+                //go to ShipInfo Activity
+            }
+        };
     }
 }

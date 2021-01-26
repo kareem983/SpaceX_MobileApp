@@ -1,6 +1,7 @@
 package com.example.spacex.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,13 +19,14 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DragonsAdapter extends RecyclerView.Adapter<DragonsAdapter.ViewHolder> {
-
+    private RecyclerViewClickListener listener;
     private List<DragonsModel> DragonsModelsArrayList = new ArrayList<>();
     private Context context;
 
-    public DragonsAdapter(Context context, List<DragonsModel> DragonsModelsArrayList) {
+    public DragonsAdapter(Context context, List<DragonsModel> DragonsModelsArrayList, RecyclerViewClickListener listener) {
         this.context = context;
         this.DragonsModelsArrayList = DragonsModelsArrayList;
+        this.listener = listener;
     }
 
 
@@ -42,7 +44,7 @@ public class DragonsAdapter extends RecyclerView.Adapter<DragonsAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        DragonsModel dragonsModel = DragonsModelsArrayList.get(position);
+        final DragonsModel dragonsModel = DragonsModelsArrayList.get(position);
         if(dragonsModel.getFlickr_images().get(0) !=null)
             Picasso.get().load(dragonsModel.getFlickr_images().get(0)).placeholder(R.drawable.rocket).into(holder.DragonImg);
         else holder.DragonImg.setImageResource(R.drawable.rocket);
@@ -58,10 +60,27 @@ public class DragonsAdapter extends RecyclerView.Adapter<DragonsAdapter.ViewHold
             holder.DragonActiveTxt.setText("inActive");
             holder.DragonActiveTxt.setTextColor(Color.RED);
         }
+
+        holder.shareDragonsImtBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Dragon Name: "+dragonsModel.getName()
+                        +"\nDragon Mass is "+dragonsModel.getDry_mass_kg()+" Kg\nFirst Flight: "+dragonsModel.getFirst_flight()
+                        +"\nDragon type is "+dragonsModel.getType()
+                        +"\nWikipedia Link: "+dragonsModel.getWikipedia());
+
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                context.startActivity(shareIntent);
+            }
+        });
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private CircleImageView DragonImg;
         private TextView DragonName, DragonActiveTxt, DragonShowDetailsName;
         private ImageView DragonActiveImg;
@@ -74,6 +93,16 @@ public class DragonsAdapter extends RecyclerView.Adapter<DragonsAdapter.ViewHold
             DragonShowDetailsName = itemView.findViewById(R.id.DragonShowDetailsName);
             DragonActiveImg = itemView.findViewById(R.id.DragonActiveImg);
             shareDragonsImtBtn = itemView.findViewById(R.id.shareDragonsImtBtn);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            listener.onClick(view,getAdapterPosition());
+        }
+    }
+
+    public interface RecyclerViewClickListener{
+        public void onClick(View view, int position);
     }
 }

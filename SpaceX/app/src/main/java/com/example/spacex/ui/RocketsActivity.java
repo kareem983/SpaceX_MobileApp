@@ -19,6 +19,8 @@ public class RocketsActivity extends AppCompatActivity {
     private RecyclerView RocketsRecyclerView;
     private RocketsAdapter adapter;
     private ProgressBar RocketsProgress;
+    private RocketsAdapter.RecyclerViewClickListener listener;
+    private List<RocketsModel> listOfRocketsModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,8 @@ public class RocketsActivity extends AppCompatActivity {
         rocketsViewModel.RocketsMutableLiveData.observe(this, new Observer<List<RocketsModel>>() {
             @Override
             public void onChanged(List<RocketsModel> rocketsModels) {
-                adapter = new RocketsAdapter(RocketsActivity.this,rocketsModels);
+                listOfRocketsModel =rocketsModels;
+                adapter = new RocketsAdapter(RocketsActivity.this,rocketsModels, listener);
                 RocketsRecyclerView.setAdapter(adapter);
 
                 RocketsRecyclerView.setVisibility(View.VISIBLE);
@@ -42,6 +45,14 @@ public class RocketsActivity extends AppCompatActivity {
             }
         });
 
-    }
 
+        listener = new RocketsAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                RocketsModel rocketsModel = listOfRocketsModel.get(position);
+                //go to RocketInfo Activity
+            }
+        };
+
+    }
 }

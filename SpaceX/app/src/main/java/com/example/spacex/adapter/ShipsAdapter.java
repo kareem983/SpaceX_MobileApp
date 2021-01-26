@@ -1,6 +1,7 @@
 package com.example.spacex.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,17 +16,17 @@ import com.example.spacex.model.ShipsModel;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ViewHolder> {
-
+    private RecyclerViewClickListener listener;
     private List<ShipsModel> ShipsModelsArrayList = new ArrayList<>();
     private Context context;
 
-    public ShipsAdapter(Context context, List<ShipsModel> ShipsModelsArrayList) {
+    public ShipsAdapter(Context context, List<ShipsModel> ShipsModelsArrayList, RecyclerViewClickListener listener) {
         this.context = context;
         this.ShipsModelsArrayList = ShipsModelsArrayList;
+        this.listener = listener;
     }
 
 
@@ -43,7 +44,7 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ShipsModel shipsModel = ShipsModelsArrayList.get(position);
+        final ShipsModel shipsModel = ShipsModelsArrayList.get(position);
         if(shipsModel.getImage() !=null)
             Picasso.get().load(shipsModel.getImage()).placeholder(R.drawable.rocket).into(holder.ShipImg);
         else holder.ShipImg.setImageResource(R.drawable.rocket);
@@ -60,10 +61,27 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ViewHolder> 
             holder.ShipActiveTxt.setTextColor(Color.RED);
         }
 
+        holder.shareShipsImtBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Ship Name: "+shipsModel.getShip_name()
+                        +"\nShip weight is "+shipsModel.getWeight_kg()+" Kg\nShip year built: "+shipsModel.getYear_built()
+                        +"\nShip type is "+shipsModel.getShip_type()+"\nnumber of missions is "+shipsModel.getMissions().size()
+                        +"\nShip website Link: "+shipsModel.getUrl());
+
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                context.startActivity(shareIntent);
+            }
+        });
+
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private CircleImageView ShipImg;
         private TextView ShipName, ShipActiveTxt, ShipShowDetailsName;
         private ImageView ShipActiveImg;
@@ -76,6 +94,17 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ViewHolder> 
             ShipShowDetailsName = itemView.findViewById(R.id.ShipShowDetailsName);
             ShipActiveImg = itemView.findViewById(R.id.ShipActiveImg);
             shareShipsImtBtn = itemView.findViewById(R.id.shareShipsImtBtn);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            listener.onClick(view, getAdapterPosition());
         }
     }
+
+    public interface RecyclerViewClickListener{
+        public void onClick(View view, int position);
+    }
+
 }
