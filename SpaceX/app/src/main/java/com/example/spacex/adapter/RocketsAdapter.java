@@ -1,6 +1,7 @@
 package com.example.spacex.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,25 +43,34 @@ public class RocketsAdapter extends RecyclerView.Adapter<RocketsAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         RocketsModel rocketsModel = RocketsModelsArrayList.get(position);
-        Picasso.get().load(rocketsModel.getFlickr_images().get(0)).into(holder.RocketImg);
+        if(rocketsModel.getFlickr_images().get(0) !=null)
+        Picasso.get().load(rocketsModel.getFlickr_images().get(0)).placeholder(R.drawable.rocket).into(holder.RocketImg);
+        else holder.RocketImg.setImageResource(R.drawable.rocket);
         holder.RocketName.setText(rocketsModel.getRocket_name());
 
-        if(rocketsModel.getActive())
-             holder.RocketActiveImg.setImageResource(R.drawable.active);
-        else holder.RocketActiveImg.setImageResource(R.drawable.unactive);
-
+        if(rocketsModel.getActive()) {
+            holder.RocketActiveImg.setImageResource(R.drawable.active);
+            holder.RocketActiveTxt.setText("Active");
+            holder.RocketActiveTxt.setTextColor(Color.GREEN);
+        }
+        else {
+            holder.RocketActiveImg.setImageResource(R.drawable.inactive);
+            holder.RocketActiveTxt.setText("inActive");
+            holder.RocketActiveTxt.setTextColor(Color.RED);
+        }
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private CircleImageView RocketImg;
-        private TextView RocketName, RocketShowDetailsName;
+        private TextView RocketName, RocketActiveTxt, RocketShowDetailsName;
         private ImageView RocketActiveImg;
         private ImageButton shareRocketsImtBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             RocketImg = itemView.findViewById(R.id.RocketImg);
             RocketName = itemView.findViewById(R.id.RocketName);
+            RocketActiveTxt = itemView.findViewById(R.id.RocketActiveTxt);
             RocketShowDetailsName = itemView.findViewById(R.id.RocketShowDetailsName);
             RocketActiveImg = itemView.findViewById(R.id.RocketActiveImg);
             shareRocketsImtBtn = itemView.findViewById(R.id.shareRocketsImtBtn);

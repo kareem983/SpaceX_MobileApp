@@ -73,6 +73,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(MainActivity.this,RocketsActivity.class);
             startActivity(intent);
         }
+        else if(id == R.id.LaunchesID){
+            Intent intent = new Intent(MainActivity.this,LaunchesActivity.class);
+            startActivity(intent);
+        }
+        else if(id == R.id.DragonsID){
+            Intent intent = new Intent(MainActivity.this,DragonsActivity.class);
+            startActivity(intent);
+        }
+        else if(id == R.id.ShipsID){
+            Intent intent = new Intent(MainActivity.this,ShipsActivity.class);
+            startActivity(intent);
+        }
         else if(id == R.id.LogoutID){
             CheckLogout();
         }

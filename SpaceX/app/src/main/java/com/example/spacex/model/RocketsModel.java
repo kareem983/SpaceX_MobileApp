@@ -9,7 +9,7 @@ public class RocketsModel {
     private String first_flight, country, company, wikipedia, rocket_name, description;
     private RocketsHelpModel height, diameter;
     private RocketsMassModel mass;
-    private RocketsEngine engines;
+    private RocketsEngineModel engines;
     private List<String> flickr_images;
 
 
@@ -77,11 +77,11 @@ public class RocketsModel {
         this.mass = mass;
     }
 
-    public RocketsEngine getEngines() {
+    public RocketsEngineModel getEngines() {
         return engines;
     }
 
-    public void setEngines(RocketsEngine engines) {
+    public void setEngines(RocketsEngineModel engines) {
         this.engines = engines;
     }
 

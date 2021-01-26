@@ -7,48 +7,48 @@
     android:background="@drawable/contaoner">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/RocketImg"
+        android:id="@+id/DragonImg"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="15dp"/>
 
     <TextView
-        android:id="@+id/RocketName"
+        android:id="@+id/DragonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxWidth="180dp"
-        android:layout_toRightOf="@id/RocketImg"
+        android:layout_toRightOf="@id/DragonImg"
         android:layout_marginTop="15dp"
         android:textSize="20dp"
         android:textColor="#000"/>
 
 
     <TextView
-        android:id="@+id/RocketActiveTxt"
+        android:id="@+id/DragonActiveTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/RocketImg"
-        android:layout_below="@id/RocketName"
+        android:layout_toRightOf="@id/DragonImg"
+        android:layout_below="@id/DragonName"
         android:layout_marginTop="5dp"
         android:textSize="15dp"
         android:textColor="#A6000000"/>
 
 
     <ImageView
-        android:id="@+id/RocketActiveImg"
+        android:id="@+id/DragonActiveImg"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_below="@id/RocketName"
-        android:layout_toRightOf="@id/RocketActiveTxt"
+        android:layout_below="@id/DragonName"
+        android:layout_toRightOf="@id/DragonActiveTxt"
         android:layout_marginLeft="5dp"/>
 
 
     <TextView
-        android:id="@+id/RocketShowDetailsName"
+        android:id="@+id/DragonShowDetailsName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/RocketImg"
-        android:layout_below="@id/RocketActiveTxt"
+        android:layout_toRightOf="@id/DragonImg"
+        android:layout_below="@id/DragonActiveTxt"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
         android:text="show details"
@@ -57,7 +57,7 @@
 
 
     <ImageButton
-        android:id="@+id/shareRocketsImtBtn"
+        android:id="@+id/shareDragonsImtBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

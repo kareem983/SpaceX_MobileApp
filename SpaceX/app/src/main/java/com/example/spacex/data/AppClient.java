@@ -1,7 +1,10 @@
 package com.example.spacex.data;
 
 import com.example.spacex.model.CompanyInfoModel;
+import com.example.spacex.model.DragonsModel;
+import com.example.spacex.model.LaunchesModel;
 import com.example.spacex.model.RocketsModel;
+import com.example.spacex.model.ShipsModel;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -33,6 +36,18 @@ public class AppClient {
 
     public Call<List<RocketsModel>> getRockets(){
         return appApiInterface.getRockets();
+    }
+
+    public Call<List<LaunchesModel>> getLaunches(){
+        return appApiInterface.getLaunches();
+    }
+
+    public Call<List<DragonsModel>> getDragons(){
+        return appApiInterface.getDragons();
+    }
+
+    public Call<List<ShipsModel>> getShips(){
+        return appApiInterface.getShips();
     }
 
 }

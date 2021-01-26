@@ -1,6 +1,6 @@
 package com.example.spacex.model;
 
-public class RocketsEngine {
+public class RocketsEngineModel {
     private int number;
     private String type;
     private String version;

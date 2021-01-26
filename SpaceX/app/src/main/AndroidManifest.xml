@@ -11,10 +11,30 @@
         android:roundIcon="@mipmap/space_x_white_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.RocketsActivity"
-            android:screenOrientation="portrait" android:label="Rockets" android:parentActivityName=".ui.MainActivity"
-            android:theme="@style/AppTheme.Dark" />
 
+        <activity android:name=".ui.ShipsActivity"
+            android:label="Ships"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark"/>
+        <activity
+            android:name=".ui.DragonsActivity"
+            android:label="Dragons"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".ui.LaunchesActivity"
+            android:label="Launches"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".ui.RocketsActivity"
+            android:label="Rockets"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".ui.CompanyActivity"
             android:label="Company Info"
