@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.example.spacex.R;
 import com.example.spacex.model.LaunchesModel;
 import com.squareup.picasso.Picasso;
@@ -66,19 +67,24 @@ public class LaunchesInfoActivity extends AppCompatActivity {
         LaunchesInfoWiki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(launchesModel.getLinks().getWikipedia()));
-                startActivity(intent);
+                if(launchesModel.getLinks().getWikipedia() !=null) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(launchesModel.getLinks().getWikipedia()));
+                    startActivity(intent);}
+                else Toast.makeText(LaunchesInfoActivity.this,"URL not available",Toast.LENGTH_LONG).show();
+
             }
         });
 
         LaunchesInfoYoutube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(launchesModel.getLinks().getVideo_link()));
-                startActivity(intent);
+                if(launchesModel.getLinks().getVideo_link() !=null) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(launchesModel.getLinks().getVideo_link()));
+                    startActivity(intent);
+                }
+                else Toast.makeText(LaunchesInfoActivity.this,"URL not available",Toast.LENGTH_LONG).show();
             }
         });
-
 
     }
 }

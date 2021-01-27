@@ -57,7 +57,7 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Mission Name: "+launchesModel.getMission_name()
                         +"\nLaunch year is "+launchesModel.getLaunch_year()+"\nThe Flight number is: "+launchesModel.getFlight_number()
                         +"\nLaunched with rocket name "+launchesModel.getRocket().getRocket_name()+"\nSome Links: "+
-                        launchesModel.getLinks().getWikipedia()+"\n"+launchesModel.getLinks().getVideo_link());
+                        launchesModel.getLinks().getVideo_link()+"\n"+launchesModel.getLinks().getWikipedia());
 
                 sendIntent.setType("text/plain");
 

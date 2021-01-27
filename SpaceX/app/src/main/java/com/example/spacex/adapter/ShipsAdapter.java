@@ -64,12 +64,25 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ViewHolder> 
         holder.shareShipsImtBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String weight, year_built, url;
+                if(shipsModel.getWeight_kg()!=0)
+                    weight = shipsModel.getWeight_kg()+ " Kg";
+                else weight = "not available";
+                if(shipsModel.getYear_built() !=0)
+                    year_built = shipsModel.getYear_built()+"";
+                else year_built = "not available";
+
+                if(shipsModel.getUrl() !=null) {
+                    url = shipsModel.getUrl();
+                }
+                else url = "URL not available";
+
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Ship Name: "+shipsModel.getShip_name()
-                        +"\nShip weight is "+shipsModel.getWeight_kg()+" Kg\nShip year built: "+shipsModel.getYear_built()
+                        +"\nShip weight is "+weight+"\nShip year built: "+year_built
                         +"\nShip type is "+shipsModel.getShip_type()+"\nnumber of missions is "+shipsModel.getMissions().size()
-                        +"\nShip website Link: "+shipsModel.getUrl());
+                        +"\nShip website Link: "+url);
 
                 sendIntent.setType("text/plain");
 

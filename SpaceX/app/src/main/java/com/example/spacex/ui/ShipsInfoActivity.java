@@ -1,7 +1,6 @@
 package com.example.spacex.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -55,7 +54,10 @@ public class ShipsInfoActivity extends AppCompatActivity {
         ShipsInfoIdTxt.setText(shipsModel.getShip_id()+"");
         ShipsInfoTypeTxt.setText(shipsModel.getShip_type());
         ShipsInfoHomePortTxt.setText(shipsModel.getHome_port());
+
+        if(shipsModel.getMissions().size()>0)
         ShipsInfoMissionNameTxt.setText(shipsModel.getMissions().get(0).getName());
+        else ShipsInfoMissionNameTxt.setText("not available");
 
         if(shipsModel.getYear_built() !=0)
         ShipsInfoYearBuiltTxt.setText(shipsModel.getYear_built()+"");
