@@ -1,8 +1,9 @@
 package com.example.spacex.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class RocketsModel {
+public class RocketsModel implements Serializable {
     private int id;
     private long cost_per_launch;
     private boolean active;

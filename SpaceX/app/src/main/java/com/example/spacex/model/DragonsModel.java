@@ -1,8 +1,9 @@
 package com.example.spacex.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class DragonsModel {
+public class DragonsModel implements Serializable {
 
     private String id, name, type, first_flight, wikipedia, description;
     private List<String> flickr_images;

@@ -1,6 +1,8 @@
 package com.example.spacex.model;
 
-public class RocketsHelpModel {
+import java.io.Serializable;
+
+public class RocketsHelpModel implements Serializable {
     private double meters, feet;
 
     public double getMeters() {

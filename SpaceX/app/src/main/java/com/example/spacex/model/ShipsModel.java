@@ -1,8 +1,9 @@
 package com.example.spacex.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ShipsModel {
+public class ShipsModel implements Serializable {
 
     private String ship_id, ship_name, ship_type, home_port, image, url;
     private long weight_kg, year_built;

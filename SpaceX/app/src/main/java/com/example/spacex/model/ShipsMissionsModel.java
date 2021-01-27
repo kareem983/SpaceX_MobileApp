@@ -1,6 +1,8 @@
 package com.example.spacex.model;
 
-public class ShipsMissionsModel {
+import java.io.Serializable;
+
+public class ShipsMissionsModel implements Serializable {
     private String name;
     private long flight;
 

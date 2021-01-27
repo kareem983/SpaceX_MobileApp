@@ -57,7 +57,7 @@ public class DragonsAdapter extends RecyclerView.Adapter<DragonsAdapter.ViewHold
         }
         else {
             holder.DragonActiveImg.setImageResource(R.drawable.inactive);
-            holder.DragonActiveTxt.setText("inActive");
+            holder.DragonActiveTxt.setText("Inactive");
             holder.DragonActiveTxt.setTextColor(Color.RED);
         }
 
@@ -67,7 +67,7 @@ public class DragonsAdapter extends RecyclerView.Adapter<DragonsAdapter.ViewHold
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Dragon Name: "+dragonsModel.getName()
-                        +"\nDragon Mass is "+dragonsModel.getDry_mass_kg()+" Kg\nFirst Flight: "+dragonsModel.getFirst_flight()
+                        +"\nDragon weight is "+dragonsModel.getDry_mass_kg()+" Kg\nFirst Flight: "+dragonsModel.getFirst_flight()
                         +"\nDragon type is "+dragonsModel.getType()
                         +"\nWikipedia Link: "+dragonsModel.getWikipedia());
 

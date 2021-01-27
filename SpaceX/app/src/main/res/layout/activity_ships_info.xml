@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ShipsInfoActivity"
+    android:background="#000">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ShipsInfoPic"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/ShipsInfoNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23dp"
+        android:layout_toRightOf="@id/ShipsInfoPic"
+        android:layout_marginTop="55dp"
+        android:textColor="#FFF"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/ShipsInfoActiveTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_toRightOf="@id/ShipsInfoPic"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/ShipsInfoNameTxt"
+        android:textColor="#FFF"/>
+
+
+    <LinearLayout
+        android:id="@+id/ShipsInfoDataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/container2"
+        android:layout_below="@id/ShipsInfoPic">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="-15dp"
+                android:paddingBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/container3"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Ship Id:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/ShipsInfoIdTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Ship type:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/ShipsInfoTypeTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Year built:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/ShipsInfoYearBuiltTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/container3"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Ship home-port:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/ShipsInfoHomePortTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Ship weight:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/ShipsInfoWeightTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Ship mission name:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/ShipsInfoMissionNameTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discover more details"
+                    android:layout_gravity="left"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_margin="15dp"
+                    android:textColor="#B5000000"/>
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ShipsInfoUri"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/marinetrafice"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

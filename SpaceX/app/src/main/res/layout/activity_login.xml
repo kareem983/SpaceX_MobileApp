@@ -65,7 +65,7 @@
                     android:layout_marginRight="35dp"
                     android:hint="EMAIL"
                     android:textColorHint="#B7FFFFFF"
-                    android:background="@drawable/contaoner">
+                    android:background="@drawable/container">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/EmailEdit"
@@ -107,7 +107,7 @@
                     android:layout_marginRight="35dp"
                     android:hint="PASSWORD"
                     android:textColorHint="#B7FFFFFF"
-                    android:background="@drawable/contaoner"
+                    android:background="@drawable/container"
                     app:passwordToggleEnabled="true"
                     app:passwordToggleTint="#B7FFFFFF">
 

@@ -1,9 +1,11 @@
 package com.example.spacex.model;
 
-public class LaunchesModel {
+import java.io.Serializable;
+
+public class LaunchesModel implements Serializable {
 
     private int flight_number;
-    private String mission_name, launch_year, details;
+    private String mission_name, launch_year, details, tentative_max_precision;
     private boolean upcoming;
     private LaunchesRocketModel rocket;
     private LaunchesLinksModel links;
@@ -63,5 +65,13 @@ public class LaunchesModel {
 
     public void setLinks(LaunchesLinksModel links) {
         this.links = links;
+    }
+
+    public String getTentative_max_precision() {
+        return tentative_max_precision;
+    }
+
+    public void setTentative_max_precision(String tentative_max_precision) {
+        this.tentative_max_precision = tentative_max_precision;
     }
 }

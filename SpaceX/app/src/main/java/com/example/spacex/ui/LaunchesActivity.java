@@ -5,6 +5,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -50,7 +51,9 @@ public class LaunchesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 LaunchesModel launchesModel = listOfLaunches.get(position);
-                //go to LaunchInfo Activity
+                Intent intent = new Intent(LaunchesActivity.this, LaunchesInfoActivity.class);
+                intent.putExtra("Launches Object", launchesModel);
+                startActivity(intent);
             }
         };
     }

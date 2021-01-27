@@ -5,6 +5,8 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -50,7 +52,9 @@ public class DragonsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 DragonsModel dragonsModel = listOfDragons.get(position);
-                //go to DragonInfo Activity
+                Intent intent = new Intent(DragonsActivity.this, DragonInfoActivity.class);
+                intent.putExtra("Dragon Object",dragonsModel);
+                startActivity(intent);
             }
         };
     }

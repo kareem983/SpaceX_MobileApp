@@ -1,6 +1,8 @@
 package com.example.spacex.model;
 
-public class RocketsMassModel {
+import java.io.Serializable;
+
+public class RocketsMassModel implements Serializable {
     private long kg, lb;
 
     public long getKg() {

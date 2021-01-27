@@ -12,11 +12,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.ShipsActivity"
+        <activity android:name=".ui.ShipsInfoActivity"
+            android:label="Ship Info"
+            android:parentActivityName=".ui.RocketsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark"/>
+        <activity
+            android:name=".ui.DragonInfoActivity"
+            android:label="Dragon Info"
+            android:parentActivityName=".ui.RocketsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".ui.LaunchesInfoActivity"
+            android:label="Launches Info"
+            android:parentActivityName=".ui.RocketsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".ui.RocketInfoActivity"
+            android:label="Rocket Info"
+            android:parentActivityName=".ui.RocketsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".ui.ShipsActivity"
             android:label="Ships"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Dark"/>
+            android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".ui.DragonsActivity"
             android:label="Dragons"

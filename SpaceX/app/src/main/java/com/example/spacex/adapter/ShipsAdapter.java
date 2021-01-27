@@ -57,7 +57,7 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ViewHolder> 
         }
         else {
             holder.ShipActiveImg.setImageResource(R.drawable.inactive);
-            holder.ShipActiveTxt.setText("inActive");
+            holder.ShipActiveTxt.setText("Inactive");
             holder.ShipActiveTxt.setTextColor(Color.RED);
         }
 

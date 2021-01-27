@@ -1,6 +1,8 @@
 package com.example.spacex.model;
 
-public class LaunchesLinksModel {
+import java.io.Serializable;
+
+public class LaunchesLinksModel implements Serializable {
 
     private String mission_patch, mission_patch_small, article_link, wikipedia, video_link;
 

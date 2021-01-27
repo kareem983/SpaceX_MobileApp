@@ -1,6 +1,8 @@
 package com.example.spacex.model;
 
-public class RocketsEngineModel {
+import java.io.Serializable;
+
+public class RocketsEngineModel implements Serializable {
     private int number;
     private String type;
     private String version;

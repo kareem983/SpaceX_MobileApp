@@ -5,6 +5,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -50,7 +51,10 @@ public class RocketsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 RocketsModel rocketsModel = listOfRocketsModel.get(position);
-                //go to RocketInfo Activity
+
+                Intent intent = new Intent(RocketsActivity.this,RocketInfoActivity.class);
+                intent.putExtra("Rocket Object", rocketsModel);
+                startActivity(intent);
             }
         };
 

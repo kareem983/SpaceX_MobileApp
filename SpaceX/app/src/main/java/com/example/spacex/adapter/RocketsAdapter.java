@@ -56,7 +56,7 @@ public class RocketsAdapter extends RecyclerView.Adapter<RocketsAdapter.ViewHold
         }
         else {
             holder.RocketActiveImg.setImageResource(R.drawable.inactive);
-            holder.RocketActiveTxt.setText("inActive");
+            holder.RocketActiveTxt.setText("Inactive");
             holder.RocketActiveTxt.setTextColor(Color.RED);
         }
 
@@ -66,7 +66,7 @@ public class RocketsAdapter extends RecyclerView.Adapter<RocketsAdapter.ViewHold
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Rocket Name: "+rocketsModel.getRocket_name()
-                     +"\nRocket Mass is "+rocketsModel.getMass().getKg()+" Kg\nFirst Flight: "+rocketsModel.getFirst_flight()
+                     +"\nRocket weight is "+rocketsModel.getMass().getKg()+" Kg\nFirst Flight: "+rocketsModel.getFirst_flight()
                 +"\nManifacturing Country is "+rocketsModel.getCountry()+"\nManifacturing Company is "+rocketsModel.getCompany()
                 +"\nWikipedia Link: "+rocketsModel.getWikipedia());
 

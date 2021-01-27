@@ -56,7 +56,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:textColorHint="#B7FFFFFF"
-            android:background="@drawable/contaoner">
+            android:background="@drawable/container">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/RNameEdit"
@@ -98,7 +98,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:textColorHint="#B7FFFFFF"
-            android:background="@drawable/contaoner">
+            android:background="@drawable/container">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/REmailEdit"
@@ -141,7 +141,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:textColorHint="#B7FFFFFF"
-            android:background="@drawable/contaoner"
+            android:background="@drawable/container"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="#B7FFFFFF">
 
@@ -184,7 +184,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:textColorHint="#B7FFFFFF"
-            android:background="@drawable/contaoner"
+            android:background="@drawable/container"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="#B7FFFFFF">
 

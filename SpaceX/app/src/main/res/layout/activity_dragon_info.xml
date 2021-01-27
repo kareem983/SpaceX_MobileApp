@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DragonInfoActivity"
+    android:background="#000">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/DragonsInfoPic"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/DragonsInfoNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="23dp"
+        android:layout_toRightOf="@id/DragonsInfoPic"
+        android:layout_marginTop="55dp"
+        android:textColor="#FFF"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/DragonsInfoActiveTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_toRightOf="@id/DragonsInfoPic"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/DragonsInfoNameTxt"
+        android:textColor="#FFF"/>
+
+
+    <LinearLayout
+        android:id="@+id/DragonsInfoDataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/container2"
+        android:layout_below="@id/DragonsInfoPic">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="-15dp"
+                android:paddingBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/container3"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Dragon Id:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/DragonsInfoIdTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Dragon type:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/DragonsInfoTypeTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="First flight:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/DragonsInfoFirstFlightTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/container3"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Dragon height:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/DragonsInfoHeightTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Dragon weight:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/DragonsInfoWeightTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:text="Dragon diameter:"
+                            android:textColor="#A80202"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/DragonsInfoDiameterTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="#B7000000"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_margin="10dp"
+                    android:textColor="#B5000000"/>
+
+                <TextView
+                    android:id="@+id/DragonsInfoDetailsTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#939292"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discover more details"
+                    android:layout_gravity="left"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_margin="10dp"
+                    android:textColor="#B5000000"/>
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/DragonsInfoWiki"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/wikipedia"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -5,6 +5,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -49,7 +52,9 @@ public class ShipsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 ShipsModel shipsModel = listOfShips.get(position);
-                //go to ShipInfo Activity
+                Intent intent = new Intent(ShipsActivity.this, ShipsInfoActivity.class);
+                intent.putExtra("Ships Object", shipsModel);
+                startActivity(intent);
             }
         };
     }
