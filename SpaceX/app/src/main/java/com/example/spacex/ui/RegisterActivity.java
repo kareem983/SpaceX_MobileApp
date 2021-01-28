@@ -7,47 +7,37 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
-import com.example.spacex.R;
 import com.example.spacex.database.AppDataBase;
 import com.example.spacex.database.UserEntityDatabase;
-import com.google.android.material.textfield.TextInputEditText;
+import com.example.spacex.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private TextInputEditText NameEdit, EmailEdit, PasswordEdit, CPasswordEdit;
-    private Button RegisterBtn;
-    private TextView GoToLogin;
+    private ActivityRegisterBinding binding;
     private AppDataBase db;
     private SharedPreferences preferences;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        setTitle("");
-        NameEdit = (TextInputEditText)findViewById(R.id.RNameEdit);
-        EmailEdit = (TextInputEditText)findViewById(R.id.REmailEdit);
-        PasswordEdit = (TextInputEditText)findViewById(R.id.RPasswordEdit);
-        CPasswordEdit = (TextInputEditText)findViewById(R.id.RCPasswordEdit);
-        RegisterBtn = findViewById(R.id.RegisterBtn);
-        GoToLogin = findViewById(R.id.goToLogin);
+
+        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
 
         db = Room.databaseBuilder(getApplicationContext(),AppDataBase.class,"First")
                 .allowMainThreadQueries()
                 .build();
 
-        RegisterBtn.setOnClickListener(new View.OnClickListener() {
+        binding.RegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 InsertPersonInDataBase();
             }
         });
 
-        GoToLogin.setOnClickListener(new View.OnClickListener() {
+        binding.goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
@@ -59,8 +49,8 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     private void InsertPersonInDataBase(){
-        String NameValue = NameEdit.getText().toString().trim(), EmailValue = EmailEdit.getText().toString().trim(),
-                PasswordValue = PasswordEdit.getText().toString(), CPasswordValue = CPasswordEdit.getText().toString();
+        String NameValue = binding.RegisterNameEdit.getText().toString().trim(), EmailValue = binding.RegisterEmailEdit.getText().toString().trim(),
+                PasswordValue = binding.RegisterPasswordEdit.getText().toString(), CPasswordValue = binding.RegisterCPasswordEdit.getText().toString();
 
         if(AllCheck(NameValue, EmailValue, PasswordValue, CPasswordValue)){
             long IsInserted = db.InsertPerson(new UserEntityDatabase(NameValue, EmailValue, PasswordValue));
@@ -94,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
         else {
             if (!CheckConfirmPassword(Password, CPassword)) {
                 Toast.makeText(RegisterActivity.this,"Password Should be identical", Toast.LENGTH_SHORT).show();
-                CPasswordEdit.setText("");
+                binding.RegisterCPasswordEdit.setText("");
             }
             else IsOk =true;
         }

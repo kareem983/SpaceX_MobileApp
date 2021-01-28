@@ -10,7 +10,7 @@
     android:background="#151219">
 
         <ImageView
-            android:id="@+id/img"
+            android:id="@+id/LoginImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -21,7 +21,7 @@
             android:id="@+id/loginTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/LContextTxt"
+            android:layout_above="@id/LoginContextTxt"
             android:text="Login"
             android:textColor="#fff"
             android:textSize="30dp"
@@ -30,10 +30,10 @@
 
 
         <TextView
-            android:id="@+id/LContextTxt"
+            android:id="@+id/LoginContextTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/EmailContainer"
+            android:layout_above="@id/LoginEmailContainer"
             android:text="Please sign in to continue."
             android:textColor="#B0FFFFFF"
             android:textSize="15dp"
@@ -43,13 +43,13 @@
 
 
         <RelativeLayout
-            android:id="@+id/EmailContainer"
+            android:id="@+id/LoginEmailContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true">
 
                 <ImageView
-                    android:id="@+id/emailIcon"
+                    android:id="@+id/LoginEmailIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_email_24"
@@ -57,7 +57,7 @@
                     android:layout_marginTop="33dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/EmailEditLayout"
+                    android:id="@+id/LoginEmailEditLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -68,7 +68,7 @@
                     android:background="@drawable/container">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/EmailEdit"
+                            android:id="@+id/LoginEmailEdit"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="EMAIL"
@@ -85,13 +85,13 @@
 
 
         <RelativeLayout
-            android:id="@+id/PasswordContainer"
+            android:id="@+id/LoginPasswordContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/EmailContainer">
+            android:layout_below="@id/LoginEmailContainer">
 
                 <ImageView
-                    android:id="@+id/PasswordIcon"
+                    android:id="@+id/LoginPasswordIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_lock_24"
@@ -99,7 +99,7 @@
                     android:layout_marginTop="33dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/PasswordEditLayout"
+                    android:id="@+id/LoginPasswordEditLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -112,7 +112,7 @@
                     app:passwordToggleTint="#B7FFFFFF">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/PasswordEdit"
+                            android:id="@+id/LoginPasswordEdit"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="PASSWORD"
@@ -132,7 +132,7 @@
             android:id="@+id/LoginBtn"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@id/PasswordContainer"
+            android:layout_below="@id/LoginPasswordContainer"
             android:layout_marginTop="35dp"
             android:layout_marginLeft="75dp"
             android:layout_marginRight="75dp"
@@ -145,7 +145,7 @@
 
 
         <RelativeLayout
-            android:id="@+id/checkContainer"
+            android:id="@+id/LogincheckContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -153,7 +153,7 @@
             android:layout_marginBottom="20dp">
 
                 <TextView
-                    android:id="@+id/txt"
+                    android:id="@+id/LoginTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Dont have an account?"
@@ -164,7 +164,7 @@
                     android:id="@+id/goToRegister"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/txt"
+                    android:layout_toRightOf="@id/LoginTxt"
                     android:text="Sign up"
                     android:textColor="#00FFE6"
                     android:textSize="18dp"

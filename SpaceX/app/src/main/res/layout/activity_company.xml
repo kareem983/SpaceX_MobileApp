@@ -6,28 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.CompanyActivity"
-    android:id="@+id/bigTotal">
+    android:id="@+id/CompanyBigTotal">
 
 
     <RelativeLayout
-        android:id="@+id/total"
+        android:id="@+id/CompanyTotal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone">
 
     <ImageView
-        android:id="@+id/logoImg"
+        android:id="@+id/CompanyLogoImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/spacexlogo"
         android:layout_marginLeft="10dp"/>
 
     <RelativeLayout
-        android:id="@+id/InfoContainer"
+        android:id="@+id/CompanyInfoContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/container2"
-        android:layout_below="@id/logoImg">
+        android:layout_below="@id/CompanyLogoImg">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
 
 
         <TextView
-            android:id="@+id/txt"
+            android:id="@+id/CompanyHistoryTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Company History"
@@ -53,11 +53,11 @@
             android:layout_gravity="center"/>
 
         <LinearLayout
-            android:id="@+id/HistoryContainer"
+            android:id="@+id/CompanyHistoryContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/txt"
+            android:layout_below="@id/CompanyHistoryTxt"
             android:layout_margin="20dp">
 
             <LinearLayout
@@ -67,7 +67,7 @@
                 android:orientation="vertical">
 
             <TextView
-                android:id="@+id/foundedID"
+                android:id="@+id/CompanyFoundedID"
                 android:layout_width="110dp"
                 android:layout_height="60dp"
                 android:background="@drawable/circle1"
@@ -93,7 +93,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
             <TextView
-                android:id="@+id/employeesID"
+                android:id="@+id/CompanyEmployeesID"
                 android:layout_width="110dp"
                 android:layout_height="60dp"
                 android:background="@drawable/circle1"
@@ -118,7 +118,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/valuationID"
+                    android:id="@+id/CompanyValuationID"
                     android:layout_width="110dp"
                     android:layout_height="60dp"
                     android:background="@drawable/circle1"
@@ -140,7 +140,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txt2"
+            android:id="@+id/CompanyContactUsTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Contact Us"
@@ -148,26 +148,26 @@
             android:textSize="25dp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/HistoryContainer"
+            android:layout_below="@id/CompanyHistoryContainer"
             android:layout_gravity="center"/>
 
         <LinearLayout
-            android:id="@+id/ContactContainer"
+            android:id="@+id/CompanyContactContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/txt2"
+            android:layout_below="@id/CompanyContactUsTxt"
             android:layout_margin="20dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/elonWebID"
+                android:id="@+id/CompanyElonWebID"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:src="@drawable/elonmusk"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/flickrWebID"
+                android:id="@+id/CompanyFlickrWebID"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
@@ -175,7 +175,7 @@
                 android:src="@drawable/flickr"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/twitterWebID"
+                android:id="@+id/CompanyTwitterWebID"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
@@ -185,14 +185,14 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txt3"
+            android:id="@+id/CompanyAboutUsTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="About us"
             android:textColor="#939292"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:layout_below="@id/ContactContainer"
+            android:layout_below="@id/CompanyContactContainer"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"/>
 
@@ -200,7 +200,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_below="@id/txt3"
+            android:layout_below="@id/CompanyAboutUsTxt"
             android:layout_margin="10dp">
 
         <LinearLayout
@@ -220,7 +220,7 @@
             android:textColor="#939292"/>
 
             <TextView
-                android:id="@+id/founderNameTxt"
+                android:id="@+id/CompanyFounderNameTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
@@ -244,7 +244,7 @@
                     android:textColor="#939292"/>
 
                 <TextView
-                    android:id="@+id/CEONameTxt"
+                    android:id="@+id/CompanyCEONameTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -268,7 +268,7 @@
                     android:textColor="#939292"/>
 
                 <TextView
-                    android:id="@+id/CTONameTxt"
+                    android:id="@+id/CompanyCTONameTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -291,7 +291,7 @@
                     android:textStyle="bold"
                     android:textColor="#939292"/>
                 <TextView
-                    android:id="@+id/companyAddressTxt"
+                    android:id="@+id/CompanyAddressTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -314,7 +314,7 @@
                     android:textStyle="bold"
                     android:textColor="#939292"/>
                 <TextView
-                    android:id="@+id/companyCityTxt"
+                    android:id="@+id/CompanyCityTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -337,7 +337,7 @@
                     android:textStyle="bold"
                     android:textColor="#939292"/>
                 <TextView
-                    android:id="@+id/companyStateTxt"
+                    android:id="@+id/CompanyStateTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -357,7 +357,7 @@
                 android:textColor="#939292"/>
 
             <TextView
-                android:id="@+id/companySummaryTxt"
+                android:id="@+id/CompanySummaryTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
@@ -375,7 +375,7 @@
 
 
     <ProgressBar
-        android:id="@+id/progress"
+        android:id="@+id/CompanyProgress"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerVertical="true"

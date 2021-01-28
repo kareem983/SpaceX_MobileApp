@@ -67,10 +67,12 @@
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".ui.RegisterActivity"
+            android:label=""
             android:parentActivityName=".ui.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.LoginActivity"
+            android:label=""
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.SplashActivity"

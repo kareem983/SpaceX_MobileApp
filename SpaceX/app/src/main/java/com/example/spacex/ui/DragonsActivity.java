@@ -4,20 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ProgressBar;
-import com.example.spacex.R;
 import com.example.spacex.adapter.DragonsAdapter;
+import com.example.spacex.databinding.ActivityDragonsBinding;
 import com.example.spacex.model.DragonsModel;
 import java.util.List;
 
 public class DragonsActivity extends AppCompatActivity {
 
-    private RecyclerView dragonsRecycler;
-    private ProgressBar dragonsProgress;
+    private ActivityDragonsBinding binding;
     private DragonsAdapter adapter;
     private DragonsViewModel dragonsViewModel;
     private DragonsAdapter.RecyclerViewClickListener listener;
@@ -26,12 +23,11 @@ public class DragonsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dragons);
 
+        binding = ActivityDragonsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        dragonsRecycler = findViewById(R.id.dragonsRecycler);
-        dragonsProgress = findViewById(R.id.DragonsProgress);
-        dragonsRecycler.setLayoutManager(new LinearLayoutManager(this));
+        binding.dragonsRecycler.setLayoutManager(new LinearLayoutManager(this));
 
         dragonsViewModel = ViewModelProviders.of(this).get(DragonsViewModel.class);
         dragonsViewModel.getDragons();
@@ -40,10 +36,10 @@ public class DragonsActivity extends AppCompatActivity {
             public void onChanged(List<DragonsModel> dragonsModels) {
                 listOfDragons = dragonsModels;
                 adapter = new DragonsAdapter(DragonsActivity.this, dragonsModels, listener);
-                dragonsRecycler.setAdapter(adapter);
+                binding.dragonsRecycler.setAdapter(adapter);
 
-                dragonsProgress.setVisibility(View.GONE);
-                dragonsRecycler.setVisibility(View.VISIBLE);
+                binding.DragonsProgress.setVisibility(View.GONE);
+                binding.dragonsRecycler.setVisibility(View.VISIBLE);
             }
         });
 

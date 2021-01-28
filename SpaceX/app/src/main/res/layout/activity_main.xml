@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity"
-    android:id="@+id/Drawer"
+    android:id="@+id/MainDrawer"
     android:background="#151219">
 
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/Navigation"
+        android:id="@+id/MainNavigation"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

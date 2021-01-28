@@ -8,43 +8,21 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import com.example.spacex.R;
+import com.example.spacex.databinding.ActivityCompanyBinding;
 import com.example.spacex.model.CompanyInfoModel;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CompanyActivity extends AppCompatActivity {
 
+    private ActivityCompanyBinding binding;
     private CompanyInfoViewModel companyInfoViewModel;
-    private TextView foundedTxt, employeesTxt, valuationTxt, FounderName, CEOName, CTOName, Address, City, State, Description;
-    private CircleImageView elonImg, flickrImg, twitterImg;
     private CompanyInfoModel companyInfoModel;
-    private RelativeLayout bigTotal, total;
-    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company);
 
-        bigTotal= (RelativeLayout)findViewById(R.id.bigTotal);
-        total= (RelativeLayout)findViewById(R.id.total);
-        progressBar = findViewById(R.id.progress);
-        foundedTxt = findViewById(R.id.foundedID);
-        employeesTxt = findViewById(R.id.employeesID);
-        valuationTxt = findViewById(R.id.valuationID);
-        elonImg = findViewById(R.id.elonWebID);
-        flickrImg = findViewById(R.id.flickrWebID);
-        twitterImg = findViewById(R.id.twitterWebID);
-        FounderName = findViewById(R.id.founderNameTxt);
-        CEOName = findViewById(R.id.CEONameTxt);
-        CTOName = findViewById(R.id.CTONameTxt);
-        Address = findViewById(R.id.companyAddressTxt);
-        City = findViewById(R.id.companyCityTxt);
-        State = findViewById(R.id.companyStateTxt);
-        Description = findViewById(R.id.companySummaryTxt);
+        binding = ActivityCompanyBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         companyInfoViewModel = ViewModelProviders.of(this).get(CompanyInfoViewModel.class);
         companyInfoViewModel.getCompanyInfo();
@@ -52,25 +30,25 @@ public class CompanyActivity extends AppCompatActivity {
             @Override
             public void onChanged(CompanyInfoModel companyInfo) {
                 companyInfoModel = companyInfo;
-                foundedTxt.setText(String.valueOf(companyInfo.getFounded()));
-                employeesTxt.setText(String.valueOf(companyInfo.getEmployees()));
-                valuationTxt.setText(String.valueOf(companyInfo.getValuation()));
-                FounderName.setText(companyInfo.getFounder());
-                CEOName.setText(companyInfo.getCeo());
-                CTOName.setText(companyInfo.getCto_propulsion());
-                Address.setText(companyInfo.getHeadquarters().getAddress());
-                City.setText(companyInfo.getHeadquarters().getCity());
-                State.setText(companyInfo.getHeadquarters().getState());
-                Description.setText(companyInfo.getSummary());
+                binding.CompanyFoundedID.setText(String.valueOf(companyInfo.getFounded()));
+                binding.CompanyEmployeesID.setText(String.valueOf(companyInfo.getEmployees()));
+                binding.CompanyValuationID.setText(String.valueOf(companyInfo.getValuation()));
+                binding.CompanyFounderNameTxt.setText(companyInfo.getFounder());
+                binding.CompanyCEONameTxt.setText(companyInfo.getCeo());
+                binding.CompanyCTONameTxt.setText(companyInfo.getCto_propulsion());
+                binding.CompanyAddressTxt.setText(companyInfo.getHeadquarters().getAddress());
+                binding.CompanyCityTxt.setText(companyInfo.getHeadquarters().getCity());
+                binding.CompanyStateTxt.setText(companyInfo.getHeadquarters().getState());
+                binding.CompanySummaryTxt.setText(companyInfo.getSummary());
 
-                progressBar.setVisibility(View.GONE);
-                bigTotal.setBackgroundColor(Color.BLACK);
-                total.setVisibility(View.VISIBLE);
+                binding.CompanyProgress.setVisibility(View.GONE);
+                binding.CompanyBigTotal.setBackgroundColor(Color.BLACK);
+                binding.CompanyTotal.setVisibility(View.VISIBLE);
 
             }
         });
 
-        elonImg.setOnClickListener(new View.OnClickListener() {
+        binding.CompanyElonWebID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(companyInfoModel.getLinks().getElon_twitter()));
@@ -78,7 +56,7 @@ public class CompanyActivity extends AppCompatActivity {
             }
         });
 
-        flickrImg.setOnClickListener(new View.OnClickListener() {
+        binding.CompanyFlickrWebID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(companyInfoModel.getLinks().getFlickr()));
@@ -86,7 +64,7 @@ public class CompanyActivity extends AppCompatActivity {
             }
         });
 
-        twitterImg.setOnClickListener(new View.OnClickListener() {
+        binding.CompanyTwitterWebID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(companyInfoModel.getLinks().getTwitter()));

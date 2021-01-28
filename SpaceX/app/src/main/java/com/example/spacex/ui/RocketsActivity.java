@@ -4,33 +4,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ProgressBar;
-import com.example.spacex.R;
 import com.example.spacex.adapter.RocketsAdapter;
+import com.example.spacex.databinding.ActivityRocketsBinding;
 import com.example.spacex.model.RocketsModel;
 import java.util.List;
 
 public class RocketsActivity extends AppCompatActivity {
 
+    private ActivityRocketsBinding binding;
     private RocketsViewModel rocketsViewModel;
-    private RecyclerView RocketsRecyclerView;
     private RocketsAdapter adapter;
-    private ProgressBar RocketsProgress;
     private RocketsAdapter.RecyclerViewClickListener listener;
     private List<RocketsModel> listOfRocketsModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rockets);
 
-        RocketsRecyclerView = findViewById(R.id.rocketsRecycler);
-        RocketsProgress = findViewById(R.id.RocketsProgress);
-        RocketsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        binding = ActivityRocketsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.rocketsRecycler.setLayoutManager(new LinearLayoutManager(this));
 
         rocketsViewModel = ViewModelProviders.of(this).get(RocketsViewModel.class);
         rocketsViewModel.getRockets();
@@ -39,10 +36,10 @@ public class RocketsActivity extends AppCompatActivity {
             public void onChanged(List<RocketsModel> rocketsModels) {
                 listOfRocketsModel =rocketsModels;
                 adapter = new RocketsAdapter(RocketsActivity.this,rocketsModels, listener);
-                RocketsRecyclerView.setAdapter(adapter);
+                binding.rocketsRecycler.setAdapter(adapter);
 
-                RocketsRecyclerView.setVisibility(View.VISIBLE);
-                RocketsProgress.setVisibility(View.GONE);
+                binding.rocketsRecycler.setVisibility(View.VISIBLE);
+                binding.RocketsProgress.setVisibility(View.GONE);
             }
         });
 

@@ -9,7 +9,7 @@
     android:background="#151219">
 
     <TextView
-        android:id="@+id/RegisterTxt"
+        android:id="@+id/RegisterContext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Account"
@@ -20,10 +20,10 @@
         android:layout_marginTop="30dp"/>
 
     <TextView
-        android:id="@+id/RContextTxt"
+        android:id="@+id/RegisterContextTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/RegisterTxt"
+        android:layout_below="@id/RegisterContext"
         android:text="Please fill the input below here"
         android:textColor="#B0FFFFFF"
         android:textSize="15dp"
@@ -34,14 +34,14 @@
 
 
     <RelativeLayout
-        android:id="@+id/RNameContainer"
+        android:id="@+id/RegisterNameContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/REmailContainer"
+        android:layout_above="@id/RegisterEmailContainer"
         android:layout_marginBottom="10dp">
 
         <ImageView
-            android:id="@+id/nameIcon"
+            android:id="@+id/RegisternameIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_person_24"
@@ -49,7 +49,7 @@
             android:layout_marginTop="33dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/RNameEditLayout"
+            android:id="@+id/RegisterNameEditLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -59,7 +59,7 @@
             android:background="@drawable/container">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/RNameEdit"
+                android:id="@+id/RegisterNameEdit"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:hint="FULL NAME"
@@ -76,14 +76,14 @@
 
 
     <RelativeLayout
-        android:id="@+id/REmailContainer"
+        android:id="@+id/RegisterEmailContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/RPasswordContainer"
+        android:layout_above="@id/RegisterPasswordContainer"
         android:layout_marginBottom="10dp">
 
         <ImageView
-            android:id="@+id/REmailIcon"
+            android:id="@+id/RegisterEmailIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_email_24"
@@ -91,7 +91,7 @@
             android:layout_marginTop="33dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/REmailEditLayout"
+            android:id="@+id/RegisterEmailEditLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -101,7 +101,7 @@
             android:background="@drawable/container">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/REmailEdit"
+                android:id="@+id/RegisterEmailEdit"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:hint="EMAIL"
@@ -119,14 +119,14 @@
 
 
     <RelativeLayout
-        android:id="@+id/RPasswordContainer"
+        android:id="@+id/RegisterPasswordContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginBottom="10dp">
 
         <ImageView
-            android:id="@+id/RPasswordIcon"
+            android:id="@+id/RegisterPasswordIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_lock_24"
@@ -134,7 +134,7 @@
             android:layout_marginTop="33dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/RPasswordEditLayout"
+            android:id="@+id/RegisterPasswordEditLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -146,7 +146,7 @@
             app:passwordToggleTint="#B7FFFFFF">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/RPasswordEdit"
+                android:id="@+id/RegisterPasswordEdit"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:hint="PASSWORD"
@@ -163,13 +163,13 @@
 
 
     <RelativeLayout
-        android:id="@+id/RCPasswordContainer"
+        android:id="@+id/RegisterCPasswordContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/RPasswordContainer">
+        android:layout_below="@id/RegisterPasswordContainer">
 
         <ImageView
-            android:id="@+id/RCPasswordIcon"
+            android:id="@+id/RegisterCPasswordIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_lock_24"
@@ -177,7 +177,7 @@
             android:layout_marginTop="33dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/RCPasswordEditLayout"
+            android:id="@+id/RegisterCPasswordEditLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -189,7 +189,7 @@
             app:passwordToggleTint="#B7FFFFFF">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/RCPasswordEdit"
+                android:id="@+id/RegisterCPasswordEdit"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:hint="CONFIRM PASSWORD"
@@ -209,7 +209,7 @@
         android:id="@+id/RegisterBtn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@id/RCPasswordContainer"
+        android:layout_below="@id/RegisterCPasswordContainer"
         android:layout_marginTop="45dp"
         android:layout_marginLeft="75dp"
         android:layout_marginRight="75dp"
@@ -222,7 +222,7 @@
 
 
     <RelativeLayout
-        android:id="@+id/RcheckContainer"
+        android:id="@+id/RegisterCheckContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -230,7 +230,7 @@
         android:layout_marginBottom="20dp">
 
         <TextView
-            android:id="@+id/Rtxt"
+            android:id="@+id/RegisterTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Already have an account?"
@@ -241,7 +241,7 @@
             android:id="@+id/goToLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/Rtxt"
+            android:layout_toRightOf="@id/RegisterTxt"
             android:text="Sign in"
             android:textColor="#00FFE6"
             android:textSize="18dp"

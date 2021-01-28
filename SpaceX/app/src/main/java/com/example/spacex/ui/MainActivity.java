@@ -5,7 +5,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.room.Room;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,12 +16,12 @@ import android.view.View;
 import android.widget.TextView;
 import com.example.spacex.R;
 import com.example.spacex.database.AppDataBase;
+import com.example.spacex.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
+    private ActivityMainBinding binding;
     private SharedPreferences preferences;
     private ActionBarDrawerToggle mToggle;
     private String UserEmail, UserName;
@@ -32,18 +31,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         db = Room.databaseBuilder(getApplicationContext(),AppDataBase.class,"First")
                 .allowMainThreadQueries()
                 .build();
         preferences = getSharedPreferences("UserFile", Context.MODE_PRIVATE);
 
-        drawerLayout = findViewById(R.id.Drawer);
-        navigationView = findViewById(R.id.Navigation);
-        navigationView.setNavigationItemSelectedListener(this);
-        mToggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
-        drawerLayout.addDrawerListener(mToggle);
+        binding.MainNavigation.setNavigationItemSelectedListener(this);
+        mToggle=new ActionBarDrawerToggle(this,binding.MainDrawer,R.string.open,R.string.close);
+        binding.MainDrawer.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -88,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else if(id == R.id.LogoutID){
             CheckLogout();
         }
-        drawerLayout.closeDrawer(GravityCompat.START);
+        binding.MainDrawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
@@ -97,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         UserEmail = preferences.getString("Email","");
         UserName = db.getPersonName(UserEmail);
 
-        View view = navigationView.getHeaderView(0);
+        View view = binding.MainNavigation.getHeaderView(0);
         UserNameTxt = view.findViewById(R.id.HeaderName);
         UserNameTxt.setText(UserName);
     }
