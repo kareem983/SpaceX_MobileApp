@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:background="@drawable/container">
+    android:background="@drawable/container"
+    android:id="@+id/Rocket_item_Container">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/RocketImg"

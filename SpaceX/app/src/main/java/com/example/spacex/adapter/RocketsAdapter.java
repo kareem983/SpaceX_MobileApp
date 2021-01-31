@@ -6,21 +6,22 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.spacex.R;
 import com.example.spacex.model.RocketsModel;
 import com.squareup.picasso.Picasso;
-import java.util.ArrayList;
 import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RocketsAdapter extends RecyclerView.Adapter<RocketsAdapter.ViewHolder> {
     private RecyclerViewClickListener listener;
-    private List<RocketsModel> RocketsModelsArrayList = new ArrayList<>();
+    private List<RocketsModel> RocketsModelsArrayList;
     private Context context;
 
     public RocketsAdapter(Context context, List<RocketsModel> RocketsModelsArrayList, RecyclerViewClickListener listener) {
@@ -77,20 +78,24 @@ public class RocketsAdapter extends RecyclerView.Adapter<RocketsAdapter.ViewHold
 
             }
         });
+
+        holder.Rocket_item_Container.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
+
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private RelativeLayout Rocket_item_Container;
         private CircleImageView RocketImg;
-        private TextView RocketName, RocketActiveTxt, RocketShowDetailsName;
+        private TextView RocketName, RocketActiveTxt;
         private ImageView RocketActiveImg;
         private ImageButton shareRocketsImtBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            Rocket_item_Container = itemView.findViewById(R.id.Rocket_item_Container);
             RocketImg = itemView.findViewById(R.id.RocketImg);
             RocketName = itemView.findViewById(R.id.RocketName);
             RocketActiveTxt = itemView.findViewById(R.id.RocketActiveTxt);
-            RocketShowDetailsName = itemView.findViewById(R.id.RocketShowDetailsName);
             RocketActiveImg = itemView.findViewById(R.id.RocketActiveImg);
             shareRocketsImtBtn = itemView.findViewById(R.id.shareRocketsImtBtn);
             itemView.setOnClickListener(this);
@@ -103,7 +108,7 @@ public class RocketsAdapter extends RecyclerView.Adapter<RocketsAdapter.ViewHold
     }
 
     public interface RecyclerViewClickListener{
-        public void onClick(View view, int position);
+        void onClick(View view, int position);
     }
 
 }

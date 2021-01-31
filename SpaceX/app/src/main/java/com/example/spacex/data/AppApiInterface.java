@@ -12,18 +12,18 @@ import retrofit2.http.GET;
 public interface AppApiInterface {
 
     @GET("info")
-    public Call<CompanyInfoModel> getCompanyInfo();
+    Call<CompanyInfoModel> getCompanyInfo();
 
     @GET("rockets")
-    public Call<List<RocketsModel>> getRockets();
+    Call<List<RocketsModel>> getRockets();
 
     @GET("launches")
-    public Call<List<LaunchesModel>> getLaunches();
+    Call<List<LaunchesModel>> getLaunches();
 
     @GET("dragons")
-    public Call<List<DragonsModel>> getDragons();
+    Call<List<DragonsModel>> getDragons();
 
     @GET("ships")
-    public Call<List<ShipsModel>> getShips();
+    Call<List<ShipsModel>> getShips();
 
 }

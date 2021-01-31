@@ -30,9 +30,8 @@ public class AppClient {
         return instance;
     }
 
-    public Call<CompanyInfoModel> getCompanyInfo(){
-        return appApiInterface.getCompanyInfo();
-    }
+
+    public Call<CompanyInfoModel> getCompanyInfo(){ return appApiInterface.getCompanyInfo();}
 
     public Call<List<RocketsModel>> getRockets(){
         return appApiInterface.getRockets();

@@ -6,21 +6,22 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.spacex.R;
 import com.example.spacex.model.ShipsModel;
 import com.squareup.picasso.Picasso;
-import java.util.ArrayList;
 import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ViewHolder> {
     private RecyclerViewClickListener listener;
-    private List<ShipsModel> ShipsModelsArrayList = new ArrayList<>();
+    private List<ShipsModel> ShipsModelsArrayList;
     private Context context;
 
     public ShipsAdapter(Context context, List<ShipsModel> ShipsModelsArrayList, RecyclerViewClickListener listener) {
@@ -91,20 +92,23 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ViewHolder> 
             }
         });
 
+        holder.Ship_item_Container.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
+
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private RelativeLayout Ship_item_Container;
         private CircleImageView ShipImg;
-        private TextView ShipName, ShipActiveTxt, ShipShowDetailsName;
+        private TextView ShipName, ShipActiveTxt;
         private ImageView ShipActiveImg;
         private ImageButton shareShipsImtBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            Ship_item_Container = itemView.findViewById(R.id.Ship_item_Container);
             ShipImg = itemView.findViewById(R.id.ShipImg);
             ShipName = itemView.findViewById(R.id.ShipName);
             ShipActiveTxt = itemView.findViewById(R.id.ShipActiveTxt);
-            ShipShowDetailsName = itemView.findViewById(R.id.ShipShowDetailsName);
             ShipActiveImg = itemView.findViewById(R.id.ShipActiveImg);
             shareShipsImtBtn = itemView.findViewById(R.id.shareShipsImtBtn);
             itemView.setOnClickListener(this);
@@ -117,7 +121,7 @@ public class ShipsAdapter extends RecyclerView.Adapter<ShipsAdapter.ViewHolder> 
     }
 
     public interface RecyclerViewClickListener{
-        public void onClick(View view, int position);
+        void onClick(View view, int position);
     }
 
 }

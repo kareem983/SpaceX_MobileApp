@@ -5,20 +5,21 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.spacex.R;
 import com.example.spacex.model.LaunchesModel;
 import com.squareup.picasso.Picasso;
-import java.util.ArrayList;
 import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHolder> {
     private RecyclerViewClickListener listener;
-    private List<LaunchesModel> LaunchesModelsArrayList = new ArrayList<>();
+    private List<LaunchesModel> LaunchesModelsArrayList;
     private Context context;
 
     public LaunchesAdapter(Context context, List<LaunchesModel> LaunchesModelsArrayList, RecyclerViewClickListener listener) {
@@ -65,18 +66,22 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
                 context.startActivity(shareIntent);
             }
         });
+
+        holder.Launches_item_Container.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
+
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private RelativeLayout Launches_item_Container;
         private CircleImageView LaunchImg;
-        private TextView LaunchName, LaunchShowDetailsName;
+        private TextView LaunchName;
         private ImageButton shareLaunchImtBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            Launches_item_Container = itemView.findViewById(R.id.Launches_item_Container);
             LaunchImg = itemView.findViewById(R.id.LaunchImg);
             LaunchName = itemView.findViewById(R.id.LaunchName);
-            LaunchShowDetailsName = itemView.findViewById(R.id.LaunchShowDetailsName);
             shareLaunchImtBtn = itemView.findViewById(R.id.shareLaunchImtBtn);
             itemView.setOnClickListener(this);
         }
@@ -88,6 +93,6 @@ public class LaunchesAdapter extends RecyclerView.Adapter<LaunchesAdapter.ViewHo
     }
 
     public interface RecyclerViewClickListener{
-        public void onClick(View view, int position);
+        void onClick(View view, int position);
     }
 }

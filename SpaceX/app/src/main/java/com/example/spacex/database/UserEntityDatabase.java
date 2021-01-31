@@ -66,12 +66,12 @@ public class UserEntityDatabase {
 interface UserDao{
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    public long InsertPerson(UserEntityDatabase userDatabase);
+    long InsertPerson(UserEntityDatabase userDatabase);
 
     @Query("SELECT Email FROM UserEntityDatabase WHERE Email =:email AND Password=:password")
-    public String GetUserEmail(String email, String password);
+    String GetUserEmail(String email, String password);
 
     @Query("SELECT Name FROM UserEntityDatabase WHERE Email =:email")
-    public String GetUserName(String email);
+    String GetUserName(String email);
 
 }

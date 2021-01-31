@@ -6,21 +6,22 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.spacex.R;
 import com.example.spacex.model.DragonsModel;
 import com.squareup.picasso.Picasso;
-import java.util.ArrayList;
 import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DragonsAdapter extends RecyclerView.Adapter<DragonsAdapter.ViewHolder> {
     private RecyclerViewClickListener listener;
-    private List<DragonsModel> DragonsModelsArrayList = new ArrayList<>();
+    private List<DragonsModel> DragonsModelsArrayList;
     private Context context;
 
     public DragonsAdapter(Context context, List<DragonsModel> DragonsModelsArrayList, RecyclerViewClickListener listener) {
@@ -77,20 +78,24 @@ public class DragonsAdapter extends RecyclerView.Adapter<DragonsAdapter.ViewHold
                 context.startActivity(shareIntent);
             }
         });
+
+        holder.Dragon_item_Container.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
+
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private RelativeLayout Dragon_item_Container;
         private CircleImageView DragonImg;
-        private TextView DragonName, DragonActiveTxt, DragonShowDetailsName;
+        private TextView DragonName, DragonActiveTxt;
         private ImageView DragonActiveImg;
         private ImageButton shareDragonsImtBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            Dragon_item_Container = itemView.findViewById(R.id.Dragon_item_Container);
             DragonImg = itemView.findViewById(R.id.DragonImg);
             DragonName = itemView.findViewById(R.id.DragonName);
             DragonActiveTxt = itemView.findViewById(R.id.DragonActiveTxt);
-            DragonShowDetailsName = itemView.findViewById(R.id.DragonShowDetailsName);
             DragonActiveImg = itemView.findViewById(R.id.DragonActiveImg);
             shareDragonsImtBtn = itemView.findViewById(R.id.shareDragonsImtBtn);
             itemView.setOnClickListener(this);
@@ -103,6 +108,6 @@ public class DragonsAdapter extends RecyclerView.Adapter<DragonsAdapter.ViewHold
     }
 
     public interface RecyclerViewClickListener{
-        public void onClick(View view, int position);
+        void onClick(View view, int position);
     }
 }

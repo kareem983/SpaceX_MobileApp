@@ -7,8 +7,219 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity"
     android:id="@+id/MainDrawer"
-    android:background="#151219">
+    android:background="#000">
 
+
+    <RelativeLayout
+        android:id="@+id/MainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/MainFirsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/MainDragonImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/astronets"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dragons take's off with two astronauts"
+            android:textSize="20dp"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:layout_marginTop="-80dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SpaceX has created history. by becoming world's first private firm to launch astronauts in space."
+            android:textSize="12dp"
+            android:textColor="#FFF"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/MainRocketsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rockets"
+        android:layout_below="@id/MainFirsContainer"
+        android:textColor="#FFF"
+        android:textSize="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/MainViewAllBtn"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="View All"
+            android:background="@drawable/button2"
+            android:layout_below="@id/MainFirsContainer"
+            android:textColor="#B5FFFFFF"
+            android:padding="5dp"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <LinearLayout
+            android:id="@+id/MainSecondContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/MainRocketsTxt">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/MainRocket1Img"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="15dp"/>
+                <TextView
+                    android:id="@+id/MainRocket1Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="2dp"/>
+
+                <TextView
+                    android:id="@+id/MainRocket1Type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MainFirsContainer"
+                    android:textColor="#B5FFFFFF"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/MainRocket2Img"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="15dp"/>
+                <TextView
+                    android:id="@+id/MainRocket2Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFF"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/MainRocket2Type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/MainFirsContainer"
+                    android:textColor="#B5FFFFFF"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/MainEarthImg"
+            android:layout_width="180dp"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/earth"
+            android:layout_marginBottom="-15dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/MainEarthImg"
+            android:paddingBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/MainEarthImg">
+
+            <TextView
+                android:id="@+id/MainMissionTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mission"
+                android:textSize="20dp"
+                android:layout_below="@id/MainFirsContainer"
+                android:textColor="#B5FFFFFF"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/MainMissionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Earth Orbit"
+                android:textSize="22dp"
+                android:layout_below="@id/MainFirsContainer"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"/>
+
+
+            <TextView
+                android:id="@+id/MainMissionDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Experienced the Blue planet from 300 km above"
+                android:textSize="12dp"
+                android:layout_below="@id/MainFirsContainer"
+                android:textColor="#B5FFFFFF"
+                android:paddingRight="10dp"
+                android:layout_marginLeft="5dp"/>
+
+            <Button
+                android:id="@+id/MainDiscoverBtn"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="Discover"
+                android:layout_margin="7dp"
+                android:background="@drawable/button2"
+                android:textColor="#B5FFFFFF"/>
+
+        </LinearLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/MainNavigation"
